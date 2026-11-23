@@ -1,0 +1,1 @@
+Draft claim for GeometryProofs/Bundle0111.lean. The repair and validation are in progress. This temporary file prevents automatic merging of an incomplete claim and will be removed before the PR is marked ready.

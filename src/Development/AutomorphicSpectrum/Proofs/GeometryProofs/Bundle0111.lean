@@ -27,6 +27,7 @@ public import Development.AutomorphicSpectrum.Proofs.GeometryProofs.Bundle0052
 
 @[expose] public section
 
+-- Draft claim: checking the scalar leviForm name collision in this member.
 -- bundled from Development.AutomorphicSpectrum.Proofs.GeometryProofs.ExistsPositiveHermitianLine
 section
 noncomputable section
