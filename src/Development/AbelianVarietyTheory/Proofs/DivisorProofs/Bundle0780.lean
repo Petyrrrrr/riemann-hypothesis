@@ -412,6 +412,7 @@ theorem exists_dep_away {E : Type} [Field E] [NumberField E] {n : ℕ} {ι : Typ
     obtain ⟨k, -, hk⟩ := (Ideal.IsPrime.prod_mem_iff (hp := P.isPrime)).1 hmem
     exact hs k hk
 
+-- PR120: investigating the ZeroHomClass timeout in coeff_mem.
 theorem coeff_mem {E : Type} [Field E] [NumberField E] {n : ℕ} {P : Ideal (𝓞 E)} {y : List ℕ}
     (hy : ∀ a ∈ y, 0 < a) (A B : Submodule (𝓞 E) (Formalism.L2.Col.Sp E n))
     (e : (A ⧸ (B ⊓ A).comap A.subtype) ≃ₗ[𝓞 E] Formalism.L2.Col.inType P y)
