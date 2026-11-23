@@ -412,7 +412,6 @@ theorem exists_dep_away {E : Type} [Field E] [NumberField E] {n : ℕ} {ι : Typ
     obtain ⟨k, -, hk⟩ := (Ideal.IsPrime.prod_mem_iff (hp := P.isPrime)).1 hmem
     exact hs k hk
 
--- PR120: investigating the ZeroHomClass timeout in coeff_mem.
 theorem coeff_mem {E : Type} [Field E] [NumberField E] {n : ℕ} {P : Ideal (𝓞 E)} {y : List ℕ}
     (hy : ∀ a ∈ y, 0 < a) (A B : Submodule (𝓞 E) (Formalism.L2.Col.Sp E n))
     (e : (A ⧸ (B ⊓ A).comap A.subtype) ≃ₗ[𝓞 E] Formalism.L2.Col.inType P y)
@@ -427,7 +426,7 @@ theorem coeff_mem {E : Type} [Field E] [NumberField E] {n : ℕ} {P : Ideal (�
     simpa using hz
   have he : (∑ k, b k • (Pi.single k 1 : Formalism.L2.Col.inType P y)) = 0 := by
     have := congrArg e hq
-    rw [map_zero] at this
+    rw [LinearEquiv.map_zero e] at this
     set_option synthInstance.maxHeartbeats 100000 in
       rw [← this, ← Submodule.mkQ_apply, map_sum, map_sum]
     refine Finset.sum_congr rfl fun k _ => ?_
